@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="OOtO Homestay">
+    <meta name="description"
+        content="Rooms at OOtO Homestay Shillong – 4 cozy bedrooms with modern amenities, king and queen beds, heating, WiFi, and more.">
+    <title>Our Rooms – OOtO Homestay Shillong</title>
+    <link rel="shortcut icon" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* Room Gallery Styles */
+        .room-gallery {
+            position: relative;
+        }
+
+        .room-main-image {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .room-main-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.4s ease;
+        }
+
+        .room-main-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .room-main-image .main-tag {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--theme);
+            color: #fff;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .room-thumbs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .room-thumb {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .room-thumb:hover,
+        .room-thumb.active {
+            border-color: var(--theme);
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .room-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Room Details */
+        .room-detail-content h3 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .room-detail-content .bed-type {
+            font-size: 16px;
+            color: var(--theme);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .room-amenity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+            margin-bottom: 30px;
+        }
+
+        .room-amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .room-amenity-item i {
+            color: var(--theme);
+            width: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Booking CTA in rooms */
+        .room-booking-cta {
+            margin-top: 20px;
+        }
+
+        .room-booking-cta h5 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .partner-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .partner-btn:hover {
+            border-color: var(--theme);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            color: #333;
+        }
+
+        .partner-btn img {
+            height: 28px;
+            width: auto;
+        }
+
+        /* Room divider */
+        .room-divider {
+            border: 0;
+            border-top: 1px solid #e8e8e8;
+            margin: 60px 0;
+        }
+
+        /* Alternating layout */
+        .room-row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 991px) {
+            .room-main-image img {
+                height: 300px;
+            }
+
+            .room-amenity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .room-row-reverse {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="t" class="letters-loading">t</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-left">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-right">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-right">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="gt-back-top" class="gt-back-to-top show"><i class="fa-solid fa-chevrons-up"></i></button>
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+
+    <!-- Offcanvas -->
+    <div class="fix-area">
+        <div class="offcanvas__info">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo"><a href="index.html"><img src="assets/img/ooto/logo/ooto-logo.png"
+                                    alt="OOtO Homestay" style="height:50px;"></a></div>
+                        <div class="offcanvas__close"><button><i class="fas fa-times"></i></button></div>
+                    </div>
+                    <p class="text d-none d-xl-block">OOtO Homestay is a warm and welcoming homestay in Shillong,
+                        offering travelers a peaceful and comfortable stay with artistic charm.</p>
+                    <div class="mobile-menu fix mb-3"></div>
+                    <div class="offcanvas__contact">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div>
+                                <div class="offcanvas__contact-text"><a href="#">Shillong, Meghalaya, India</a></div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div>
+                                <div class="offcanvas__contact-text"><a
+                                        href="mailto:ooto.homestay@gmail.com">ooto.homestay@gmail.com</a></div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div>
+                                <div class="offcanvas__contact-text"><a href="#">Check-in: 2 PM / Check-out: 11 AM</a>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div>
+                                <div class="offcanvas__contact-text"><a href="tel:+918837049926">+91 88370 49926</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="booking.html" class="gt-theme-btn">BOOK NOW</a>
+                        <div class="social-icon d-flex align-items-center">
+                            <a href="https://www.instagram.com/ootohomestay" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas__overlay"></div>
+
+    <!-- Header -->
+    <header class="header-section">
+        <div class="header-top-section">
+            <div class="container-fluid">
+                <div class="header-top-wrapper">
+                    <ul>
+                        <li><i class="fa-solid fa-phone-plus"></i><a href="tel:+918837049926">+91 88370 49926</a></li>
+                        <li><i class="fa-solid fa-envelopes"></i><a href="mailto:ooto.homestay@gmail.com">
+                                ooto.homestay@gmail.com</a></li>
+                        <li><i class="fa-solid fa-location-dot"></i> Shillong, Meghalaya, India</li>
+                    </ul>
+                    <div class="gt-social-icon d-flex align-items-center">
+                        <a href="https://www.instagram.com/ootohomestay" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="header-sticky" class="header-1">
+            <div class="container-fluid">
+                <div class="mega-menu-wrapper">
+                    <div class="header-main">
+                        <div class="logo d-xl-none">
+                            <a href="index.html" class="header-logo"><img src="assets/img/ooto/logo/ooto-logo.png"
+                                    alt="OOtO Homestay" style="height:50px;"></a>
+                            <a href="index.html" class="header-logo-2"><img src="assets/img/ooto/logo/ooto-logo.png"
+                                    alt="OOtO Homestay" style="height:50px;"></a>
+                        </div>
+                        <div class="header-left">
+                            <div class="mean__menu-wrapper">
+                                <div class="main-menu">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li class="active"><a href="room.html">Rooms</a></li>
+                                            <li><a href="reviews.html">Reviews</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="booking.html">Booking</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="logo d-none d-xl-block">
+                                <a href="index.html" class="header-logo"><img src="assets/img/ooto/logo/ooto-logo.png"
+                                        alt="OOtO Homestay" style="height:55px;"></a>
+                                <a href="index.html" class="header-logo-2"><img src="assets/img/ooto/logo/ooto-logo.png"
+                                        alt="OOtO Homestay" style="height:55px;"></a>
+                            </div>
+                        </div>
+                        <div class="header-right d-flex justify-content-end align-items-center">
+                            <div class="hero-button"><a href="booking.html" class="gt-theme-btn">BOOK NOW</a></div>
+                            <div class="header__hamburger d-xl-none my-auto">
+                                <div class="sidebar__toggle">
+                                    <div class="header-bar"><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="gt-breadcrumb-wrapper bg-cover"
+        style="background-image: url('assets/img/ooto/bedroom-2/background.png');">
+        <div class="breadcrumb-shape"><img src="assets/img/bottom-shape.png" alt="img"></div>
+        <div class="container">
+            <div class="gt-page-heading">
+                <div class="gt-breadcrumb-sub-title">
+                    <h1 class="text-white wow fadeInUp" data-wow-delay=".3s">Our Rooms</h1>
+                </div>
+                <ul class="gt-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li>Our Rooms</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- BEDROOM 1 -->
+    <!-- ============================================ -->
+    <section class="gt-about-section-2 section-padding fix">
+        <div class="container">
+            <div class="row g-5 align-items-center" id="room-1">
+                <!-- Left: Image Gallery -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="room-gallery">
+                        <div class="room-main-image" style="position:relative;">
+                            <span class="main-tag">Main</span>
+                            <a href="assets/img/ooto/bedroom-1/main.avif" class="popup-image">
+                                <img src="assets/img/ooto/bedroom-1/main.avif" alt="Bedroom 1 – Main View"
+                                    id="room1-main">
+                            </a>
+                        </div>
+                        <div class="room-thumbs">
+                            <div class="room-thumb active"
+                                onclick="switchRoomImg('room1-main', this, 'assets/img/ooto/bedroom-1/main.avif')">
+                                <img src="assets/img/ooto/bedroom-1/main.avif" alt="View 1">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room1-main', this, 'assets/img/ooto/bedroom-1/1a087d0a-3132-4fbd-b544-434efd1bdf28.avif')">
+                                <img src="assets/img/ooto/bedroom-1/1a087d0a-3132-4fbd-b544-434efd1bdf28.avif"
+                                    alt="View 2">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room1-main', this, 'assets/img/ooto/bedroom-1/a5c80693-0ff8-4bd7-85e9-26bebb29ed59.avif')">
+                                <img src="assets/img/ooto/bedroom-1/a5c80693-0ff8-4bd7-85e9-26bebb29ed59.avif"
+                                    alt="View 3">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room1-main', this, 'assets/img/ooto/bedroom-1/a7b53ad9-b6aa-4cde-b5ea-617adce876fc.avif')">
+                                <img src="assets/img/ooto/bedroom-1/a7b53ad9-b6aa-4cde-b5ea-617adce876fc.avif"
+                                    alt="View 4">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room1-main', this, 'assets/img/ooto/bedroom-1/2ef2853c-bc13-4742-9d1c-1fdfd47829a6.avif')">
+                                <img src="assets/img/ooto/bedroom-1/2ef2853c-bc13-4742-9d1c-1fdfd47829a6.avif"
+                                    alt="View 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Details -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="room-detail-content">
+                        <div class="gt-section-title">
+                            <h6><img src="assets/img/arrow-left.svg" alt="img"> BEDROOM 1</h6>
+                        </div>
+                        <h3>Bedroom 1</h3>
+                        <p class="bed-type"><i class="flaticon-bed-1"></i> King Bed</p>
+                        <div class="room-amenity-grid">
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Bed linen</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Clothes storage</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Extra pillows &amp;
+                                blankets</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Heating</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Iron</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> TV</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Bidet</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Body soap</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Hot water</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Private bathroom</div>
+                        </div>
+                        <div class="room-booking-cta">
+                            <h5>Book This Room</h5>
+                            <a href="https://www.airbnb.com/rooms/1214624583136449076" target="_blank"
+                                class="partner-btn"><img src="assets/img/ooto/partners/airbnb.png" alt="Airbnb"> Book on
+                                Airbnb</a>
+                            <a href="https://www.makemytrip.com/hotels/ooto_homestay-details-shillong.html"
+                                target="_blank" class="partner-btn"><img src="assets/img/ooto/partners/makemytrip.png"
+                                    alt="MakeMyTrip"> Book on
+                                MakeMyTrip</a>
+                            <a href="https://www.booking.com/hotel/in/ooto-homestay.html" target="_blank"
+                                class="partner-btn"><img src="assets/img/ooto/partners/booking-ar21.svg"
+                                    alt="Booking.com">
+                                Book on
+                                Booking.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="room-divider container">
+
+    <!-- ============================================ -->
+    <!-- BEDROOM 2 -->
+    <!-- ============================================ -->
+    <section class="fix" style="padding: 60px 0 80px;">
+        <div class="container">
+            <div class="row g-5 align-items-center room-row-reverse" id="room-2">
+                <!-- Right: Image Gallery (visually on right due to reverse) -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="room-gallery">
+                        <div class="room-main-image" style="position:relative;">
+                            <span class="main-tag">Main</span>
+                            <a href="assets/img/ooto/bedroom-2/main.avif" class="popup-image">
+                                <img src="assets/img/ooto/bedroom-2/main.avif" alt="Bedroom 2 – Main View"
+                                    id="room2-main">
+                            </a>
+                        </div>
+                        <div class="room-thumbs">
+                            <div class="room-thumb active"
+                                onclick="switchRoomImg('room2-main', this, 'assets/img/ooto/bedroom-2/main.avif')">
+                                <img src="assets/img/ooto/bedroom-2/main.avif" alt="View 1">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room2-main', this, 'assets/img/ooto/bedroom-2/0efd11da-1144-4287-a5ef-5ff92f610517.avif')">
+                                <img src="assets/img/ooto/bedroom-2/0efd11da-1144-4287-a5ef-5ff92f610517.avif"
+                                    alt="View 2">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room2-main', this, 'assets/img/ooto/bedroom-2/1edb4822-b506-4c3a-af98-1fa75c1e08c0.avif')">
+                                <img src="assets/img/ooto/bedroom-2/1edb4822-b506-4c3a-af98-1fa75c1e08c0.avif"
+                                    alt="View 3">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room2-main', this, 'assets/img/ooto/bedroom-2/38434c02-cd53-4320-b2b5-00db14f622a2.avif')">
+                                <img src="assets/img/ooto/bedroom-2/38434c02-cd53-4320-b2b5-00db14f622a2.avif"
+                                    alt="View 4">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room2-main', this, 'assets/img/ooto/bedroom-2/ef612029-a6cc-4666-b50a-ee91c82ff8d4.avif')">
+                                <img src="assets/img/ooto/bedroom-2/ef612029-a6cc-4666-b50a-ee91c82ff8d4.avif"
+                                    alt="View 5">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room2-main', this, 'assets/img/ooto/bedroom-2/dbb6d7d4-b884-4893-8b3e-291daa6d9e42.avif')">
+                                <img src="assets/img/ooto/bedroom-2/dbb6d7d4-b884-4893-8b3e-291daa6d9e42.avif"
+                                    alt="View 6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left: Details -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="room-detail-content">
+                        <div class="gt-section-title">
+                            <h6><img src="assets/img/arrow-left.svg" alt="img"> BEDROOM 2</h6>
+                        </div>
+                        <h3>Bedroom 2</h3>
+                        <p class="bed-type"><i class="flaticon-bed-1"></i> Queen Bed</p>
+                        <div class="room-amenity-grid">
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Bed linen</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Clothes storage</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Extra pillows &amp;
+                                blankets</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Heating</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Iron</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> TV</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Bidet</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Body soap</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Hot water</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Private bathroom</div>
+                        </div>
+                        <div class="room-booking-cta">
+                            <h5>Book This Room</h5>
+                            <a href="https://www.airbnb.com/rooms/1214624583136449076" target="_blank"
+                                class="partner-btn"><img src="assets/img/ooto/partners/airbnb.png" alt="Airbnb"> Book on
+                                Airbnb</a>
+                            <a href="https://www.makemytrip.com/hotels/ooto_homestay-details-shillong.html"
+                                target="_blank" class="partner-btn"><img src="assets/img/ooto/partners/makemytrip.png"
+                                    alt="MakeMyTrip"> Book on
+                                MakeMyTrip</a>
+                            <a href="https://www.booking.com/hotel/in/ooto-homestay.html" target="_blank"
+                                class="partner-btn"><img src="assets/img/ooto/partners/booking-ar21.svg"
+                                    alt="Booking.com">
+                                Book on
+                                Booking.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="room-divider container">
+
+    <!-- ============================================ -->
+    <!-- BEDROOM 3 -->
+    <!-- ============================================ -->
+    <section class="fix" style="padding: 60px 0 80px;">
+        <div class="container">
+            <div class="row g-5 align-items-center" id="room-3">
+                <!-- Left: Image Gallery -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="room-gallery">
+                        <div class="room-main-image" style="position:relative;">
+                            <span class="main-tag">Main</span>
+                            <a href="assets/img/ooto/bedroom-3/Main.avif" class="popup-image">
+                                <img src="assets/img/ooto/bedroom-3/Main.avif" alt="Bedroom 3 – Main View"
+                                    id="room3-main">
+                            </a>
+                        </div>
+                        <div class="room-thumbs">
+                            <div class="room-thumb active"
+                                onclick="switchRoomImg('room3-main', this, 'assets/img/ooto/bedroom-3/Main.avif')">
+                                <img src="assets/img/ooto/bedroom-3/Main.avif" alt="View 1">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room3-main', this, 'assets/img/ooto/bedroom-3/0ec93017-5a30-4cc3-831e-a084a26736b3.avif')">
+                                <img src="assets/img/ooto/bedroom-3/0ec93017-5a30-4cc3-831e-a084a26736b3.avif"
+                                    alt="View 2">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room3-main', this, 'assets/img/ooto/bedroom-3/99388826-f75a-407d-8f92-7187619c7556.avif')">
+                                <img src="assets/img/ooto/bedroom-3/99388826-f75a-407d-8f92-7187619c7556.avif"
+                                    alt="View 3">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room3-main', this, 'assets/img/ooto/bedroom-3/dd30dd9b-a1fd-4e92-b205-14f3ec30dddf.avif')">
+                                <img src="assets/img/ooto/bedroom-3/dd30dd9b-a1fd-4e92-b205-14f3ec30dddf.avif"
+                                    alt="View 4">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room3-main', this, 'assets/img/ooto/bedroom-3/e4058114-6d8e-455e-92e4-b0200b1fe42e.avif')">
+                                <img src="assets/img/ooto/bedroom-3/e4058114-6d8e-455e-92e4-b0200b1fe42e.avif"
+                                    alt="View 5">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room3-main', this, 'assets/img/ooto/bedroom-3/f1e8a239-9488-49d7-ac09-99897f733652.avif')">
+                                <img src="assets/img/ooto/bedroom-3/f1e8a239-9488-49d7-ac09-99897f733652.avif"
+                                    alt="View 6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Details -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="room-detail-content">
+                        <div class="gt-section-title">
+                            <h6><img src="assets/img/arrow-left.svg" alt="img"> BEDROOM 3</h6>
+                        </div>
+                        <h3>Bedroom 3</h3>
+                        <p class="bed-type"><i class="flaticon-bed-1"></i> Queen Bed</p>
+                        <div class="room-amenity-grid">
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Bed linen</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Clothes storage</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Extra pillows &amp;
+                                blankets</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Heating</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Iron</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> TV</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Bidet</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Body soap</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Hot water</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Private bathroom</div>
+                        </div>
+                        <div class="room-booking-cta">
+                            <h5>Book This Room</h5>
+                            <a href="https://www.airbnb.com/rooms/1214624583136449076" target="_blank"
+                                class="partner-btn"><img src="assets/img/ooto/partners/airbnb.png" alt="Airbnb"> Book on
+                                Airbnb</a>
+                            <a href="https://www.makemytrip.com/hotels/ooto_homestay-details-shillong.html"
+                                target="_blank" class="partner-btn"><img src="assets/img/ooto/partners/makemytrip.png"
+                                    alt="MakeMyTrip"> Book on
+                                MakeMyTrip</a>
+                            <a href="https://www.booking.com/hotel/in/ooto-homestay.html" target="_blank"
+                                class="partner-btn"><img src="assets/img/ooto/partners/booking-ar21.svg"
+                                    alt="Booking.com">
+                                Book on
+                                Booking.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="room-divider container">
+
+    <!-- ============================================ -->
+    <!-- BEDROOM 4 -->
+    <!-- ============================================ -->
+    <section class="fix" style="padding: 60px 0 80px;">
+        <div class="container">
+            <div class="row g-5 align-items-center room-row-reverse" id="room-4">
+                <!-- Right: Image Gallery -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="room-gallery">
+                        <div class="room-main-image" style="position:relative;">
+                            <span class="main-tag">Main</span>
+                            <a href="assets/img/ooto/bedroom-4/Main.avif" class="popup-image">
+                                <img src="assets/img/ooto/bedroom-4/Main.avif" alt="Bedroom 4 – Main View"
+                                    id="room4-main">
+                            </a>
+                        </div>
+                        <div class="room-thumbs">
+                            <div class="room-thumb active"
+                                onclick="switchRoomImg('room4-main', this, 'assets/img/ooto/bedroom-4/Main.avif')">
+                                <img src="assets/img/ooto/bedroom-4/Main.avif" alt="View 1">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room4-main', this, 'assets/img/ooto/bedroom-4/56c82f3b-e722-4380-a31b-51f99d3f43d3.avif')">
+                                <img src="assets/img/ooto/bedroom-4/56c82f3b-e722-4380-a31b-51f99d3f43d3.avif"
+                                    alt="View 2">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room4-main', this, 'assets/img/ooto/bedroom-4/65f9cd23-0573-4ddc-8f4a-e730a03d6d64.avif')">
+                                <img src="assets/img/ooto/bedroom-4/65f9cd23-0573-4ddc-8f4a-e730a03d6d64.avif"
+                                    alt="View 3">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room4-main', this, 'assets/img/ooto/bedroom-4/6f8fa9dd-beb0-470a-8a2d-31441ad984da.avif')">
+                                <img src="assets/img/ooto/bedroom-4/6f8fa9dd-beb0-470a-8a2d-31441ad984da.avif"
+                                    alt="View 4">
+                            </div>
+                            <div class="room-thumb"
+                                onclick="switchRoomImg('room4-main', this, 'assets/img/ooto/bedroom-4/c59d3a2e-aa3b-483d-9c73-2aad241c16a6.avif')">
+                                <img src="assets/img/ooto/bedroom-4/c59d3a2e-aa3b-483d-9c73-2aad241c16a6.avif"
+                                    alt="View 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left: Details -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="room-detail-content">
+                        <div class="gt-section-title">
+                            <h6><img src="assets/img/arrow-left.svg" alt="img"> BEDROOM 4</h6>
+                        </div>
+                        <h3>Bedroom 4</h3>
+                        <p class="bed-type"><i class="flaticon-bed-1"></i> Queen Bed</p>
+                        <div class="room-amenity-grid">
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Bed linen</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Clothes storage</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Extra pillows &amp;
+                                blankets</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Heating</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> TV</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Bidet</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Body soap</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Hot water</div>
+                            <div class="room-amenity-item"><i class="fa-solid fa-check"></i> Private bathroom</div>
+                        </div>
+                        <div class="room-booking-cta">
+                            <h5>Book This Room</h5>
+                            <a href="https://www.airbnb.com/rooms/1214624583136449076" target="_blank"
+                                class="partner-btn"><img src="assets/img/ooto/partners/airbnb.png" alt="Airbnb"> Book on
+                                Airbnb</a>
+                            <a href="https://www.makemytrip.com/hotels/ooto_homestay-details-shillong.html"
+                                target="_blank" class="partner-btn"><img src="assets/img/ooto/partners/makemytrip.png"
+                                    alt="MakeMyTrip"> Book on
+                                MakeMyTrip</a>
+                            <a href="https://www.booking.com/hotel/in/ooto-homestay.html" target="_blank"
+                                class="partner-btn"><img src="assets/img/ooto/partners/booking-ar21.svg"
+                                    alt="Booking.com">
+                                Book on
+                                Booking.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Amenities Section -->
+    <section class="gt-service-section fix section-padding section-bg">
+        <div class="container">
+            <div class="gt-section-title text-center">
+                <h6 class="justify-content-center wow fadeInUp">
+                    <img src="assets/img/arrow-left.svg" alt="img">
+                    AMENITIES
+                    <img src="assets/img/arrow-right-2.svg" alt="img">
+                </h6>
+                <h2 class="wow fadeInUp" data-wow-delay=".2s">Property Amenities</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp">
+                    <div class="service-box-items">
+                        <div class="icon"><i class="flaticon-free-parking"></i></div>
+                        <h4>Free Parking</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="service-box-items">
+                        <div class="icon"><i class="flaticon-wifi-router"></i></div>
+                        <h4>WiFi</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="service-box-items">
+                        <div class="icon"><i class="flaticon-fast-food"></i></div>
+                        <h4>Full Kitchen</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="service-box-items">
+                        <div class="icon"><img src="assets/img/ooto/icons/heating.svg" alt="Heating"
+                                style="width:50px;height:50px;"></div>
+                        <h4>Heating</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp">
+                    <div class="service-box-items">
+                        <div class="icon"><i class="flaticon-key-card"></i></div>
+                        <h4>Private Entrance</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="service-box-items">
+                        <div class="icon"><i class="flaticon-bed-1"></i></div>
+                        <h4>Extra Pillows &amp; Blankets</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="service-box-items">
+                        <div class="icon"><img src="assets/img/ooto/icons/dinning-table.svg" alt="Dining Table"
+                                style="width:50px;height:50px;"></div>
+                        <h4>Dining Table</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="service-box-items">
+                        <div class="icon"><img src="assets/img/ooto/icons/fire-extinguisher.svg" alt="Fire Extinguisher"
+                                style="width:50px;height:50px;"></div>
+                        <h4>Fire Extinguisher</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp">
+                    <div class="service-box-items">
+                        <div class="icon"><img src="assets/img/ooto/icons/first-aid.svg" alt="First Aid Kit"
+                                style="width:50px;height:50px;"></div>
+                        <h4>First Aid Kit</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="service-box-items">
+                        <div class="icon"><img src="assets/img/ooto/icons/fridge.svg" alt="Fridge"
+                                style="width:50px;height:50px;"></div>
+                        <h4>Fridge</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="service-box-items">
+                        <div class="icon"><img src="assets/img/ooto/icons/kettle.svg" alt="Kettle"
+                                style="width:50px;height:50px;"></div>
+                        <h4>Kettle</h4>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="service-box-items">
+                        <div class="icon"><i class="flaticon-suite"></i></div>
+                        <h4>Patio / Balcony</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- House Rules Section -->
+    <section class="section-padding fix section-bg">
+        <div class="container">
+            <div class="gt-section-title text-center">
+                <h6 class="justify-content-center wow fadeInUp"><img src="assets/img/arrow-left.svg" alt="img"> PLEASE
+                    NOTE <img src="assets/img/arrow-right-2.svg" alt="img"></h6>
+                <h2 class="wow fadeInUp" data-wow-delay=".2s">House Rules</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div
+                        style="background:#fff;border-radius:12px;padding:35px 40px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+                        <div class="d-flex align-items-start mb-4 wow fadeInUp" data-wow-delay=".2s">
+                            <div
+                                style="min-width:44px;height:44px;background:var(--gt-theme);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:18px;margin-top:2px;">
+                                <i class="fa-solid fa-indian-rupee-sign" style="color:#fff;font-size:18px;"></i>
+                            </div>
+                            <div>
+                                <h5 style="margin-bottom:4px;">Deposit</h5>
+                                <p style="margin:0;color:#555;line-height:1.6;">A refundable damage deposit of ₹1,000 is
+                                    required upon arrival (cash).</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 wow fadeInUp" data-wow-delay=".3s">
+                            <div
+                                style="min-width:44px;height:44px;background:var(--gt-theme);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:18px;margin-top:2px;">
+                                <i class="fa-solid fa-ban-smoking" style="color:#fff;font-size:18px;"></i>
+                            </div>
+                            <div>
+                                <h5 style="margin-bottom:4px;">Smoking / Parties</h5>
+                                <p style="margin:0;color:#555;line-height:1.6;">Smoking and parties/events are not
+                                    allowed.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 wow fadeInUp" data-wow-delay=".4s">
+                            <div
+                                style="min-width:44px;height:44px;background:var(--gt-theme);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:18px;margin-top:2px;">
+                                <i class="fa-solid fa-moon" style="color:#fff;font-size:18px;"></i>
+                            </div>
+                            <div>
+                                <h5 style="margin-bottom:4px;">Quiet Hours</h5>
+                                <p style="margin:0;color:#555;line-height:1.6;">Guests must maintain silence between
+                                    10:00 PM and 8:00 AM.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 wow fadeInUp" data-wow-delay=".5s">
+                            <div
+                                style="min-width:44px;height:44px;background:var(--gt-theme);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:18px;margin-top:2px;">
+                                <i class="fa-solid fa-child" style="color:#fff;font-size:18px;"></i>
+                            </div>
+                            <div>
+                                <h5 style="margin-bottom:4px;">Children &amp; Extra Beds</h5>
+                                <p style="margin:0;color:#555;line-height:1.6;">Children of all ages are welcome; those
+                                    6+ are charged as adults. Extra beds are available upon request.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start wow fadeInUp" data-wow-delay=".6s">
+                            <div
+                                style="min-width:44px;height:44px;background:var(--gt-theme);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:18px;margin-top:2px;">
+                                <i class="fa-solid fa-id-card" style="color:#fff;font-size:18px;"></i>
+                            </div>
+                            <div>
+                                <h5 style="margin-bottom:4px;">Identification</h5>
+                                <p style="margin:0;color:#555;line-height:1.6;">A valid photo ID is required for
+                                    check-in.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gt-footer-section fix bg-cover"
+        style="background-image: url('assets/img/home-1/footer/footer-img.jpg');">
+        <div class="container">
+            <div class="gt-footer-widget-wrapper">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-12 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="gt-footer-widget-items">
+                            <div class="gt-widget-head"><a href="index.html" class="gt-footer-logo"><img
+                                        src="assets/img/ooto/logo/ooto-logo.png" alt="OOtO Homestay"
+                                        style="height:60px;"></a></div>
+                            <div class="gt-footer-content">
+                                <p class="text-white">OOtO Homestay – A cozy artistic homestay in Shillong, offering
+                                    comfortable rooms, warm hospitality, and an authentic Northeast India experience.
+                                </p>
+                                <div class="gt-social-icon d-flex align-items-center">
+                                    <a href="https://www.instagram.com/ootohomestay" target="_blank"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="gt-footer-widget-items">
+                            <div class="gt-widget-head">
+                                <h3>Useful links</h3>
+                            </div>
+                            <ul class="gt-list-area">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="room.html">Rooms</a></li>
+                                <li><a href="reviews.html">Reviews</a></li>
+                                <li><a href="booking.html">Booking</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="gt-footer-widget-items">
+                            <div class="gt-widget-head">
+                                <h3>Check-in / Check-out</h3>
+                            </div>
+                            <ul class="gt-working-hour">
+                                <li>Check-in : <span>After 2:00 PM</span></li>
+                                <li>Check-out : <span>Before 11:00 AM</span></li>
+                                <li>Long-term stays : <span>Allowed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="gt-footer-widget-items">
+                            <div class="gt-widget-head">
+                                <h3>Contact Us</h3>
+                            </div>
+                            <ul class="gt-contact-list">
+                                <li><img src="assets/img/home-1/footer/location.svg" alt="img">
+                                    <p>Narendra Dam, Lane, Laban, Shillong, Meghalaya 793004</p>
+                                </li>
+                                <li><img src="assets/img/home-1/footer/email.svg" alt="img"><a
+                                        href="mailto:ooto.homestay@gmail.com">ooto.homestay@gmail.com</a></li>
+                                <li><img src="assets/img/home-1/footer/call.svg" alt="img"><a
+                                        href="tel:+918837049926">+91 88370 49926</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom wow fadeInUp" data-wow-delay=".3s">
+            <div class="container">
+                <div class="footer-wrapper d-flex align-items-center justify-content-between">
+                    <p>&copy; 2025 <a href="index.html">OOtO Homestay</a>. All Rights Reserved.</p>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/parallaxie.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Image switcher for room galleries
+        function switchRoomImg(mainId, thumb, newSrc) {
+            var mainImg = document.getElementById(mainId);
+            mainImg.style.opacity = '0';
+            setTimeout(function () {
+                mainImg.src = newSrc;
+                mainImg.parentElement.href = newSrc;
+                mainImg.style.opacity = '1';
+            }, 200);
+            // Update active thumb
+            var thumbs = thumb.parentElement.querySelectorAll('.room-thumb');
+            thumbs.forEach(function (t) { t.classList.remove('active'); });
+            thumb.classList.add('active');
+        }
+        // Add transition to main images
+        document.querySelectorAll('.room-main-image img').forEach(function (img) {
+            img.style.transition = 'opacity 0.2s ease';
+        });
+        // Init magnific popup
+        $(document).ready(function () {
+            $('.popup-image').magnificPopup({ type: 'image', gallery: { enabled: true } });
+        });
+    </script>
+</body>
+
+</html>
